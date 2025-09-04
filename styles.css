@@ -1,0 +1,804 @@
+/* 
+  CSS (Cascading Style Sheets) Tutorial
+  
+  CSS controls the visual appearance of HTML elements.
+  It consists of selectors, properties, and values.
+  
+  Basic Syntax:
+  selector {
+    property: value;
+    property: value;
+  }
+*/
+
+/* ===========================================
+   1. RESET AND BASE STYLES
+   =========================================== */
+
+/* 
+  Universal selector (*) applies styles to ALL elements.
+  This resets default browser margins and padding for consistency.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes width/height include padding and border */
+}
+
+/* 
+  Element selector - targets HTML elements by their tag name.
+  This sets base styles for the entire document.
+*/
+body {
+  font-family: 'Arial', sans-serif; /* Font family with fallback options */
+  line-height: 1.6; /* Space between lines of text */
+  color: #333; /* Text color (dark gray) */
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+/* 
+  Colors in CSS can be specified as:
+  - Names: red, blue, green
+  - Hex codes: #ff0000, #333
+  - RGB: rgb(255, 0, 0)
+  - HSL: hsl(0, 100%, 50%)
+*/
+
+/* ===========================================
+   2. TYPOGRAPHY STYLES
+   =========================================== */
+
+/* Heading styles - demonstrating different font sizes and spacing */
+h1 {
+  font-size: 2.5rem; /* rem units are relative to root font size */
+  color: #2c3e50; /* Dark blue-gray */
+  text-align: center; /* Centers the text */
+  margin-bottom: 1rem; /* Space below the element */
+}
+
+h2 {
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.8; /* More readable spacing between lines */
+}
+
+/* ===========================================
+   3. LAYOUT STYLES
+   =========================================== */
+
+/* 
+  Class selector - targets elements with specific class attributes.
+  Classes are reusable and can be applied to multiple elements.
+  They start with a dot (.) in CSS.
+*/
+
+.container {
+  max-width: 1200px; /* Maximum width of the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding: 0 20px; /* Horizontal padding */
+}
+
+/* ===========================================
+   4. HEADER AND NAVIGATION STYLES
+   =========================================== */
+
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* 
+    Linear gradient creates a smooth color transition.
+    135deg is the angle, followed by color stops.
+  */
+  color: white;
+  padding: 2rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  /* 
+    Box-shadow adds depth with shadow effects.
+    Format: horizontal vertical blur spread color
+  */
+}
+
+/* 
+  Descendant selector - targets ul elements inside nav elements.
+  Spaces between selectors indicate parent-child relationships.
+*/
+nav ul {
+  list-style: none; /* Removes bullet points */
+  display: flex; /* Flexbox layout for horizontal arrangement */
+  justify-content: center; /* Centers items horizontally */
+  margin-bottom: 2rem;
+}
+
+nav ul li {
+  margin: 0 1rem; /* Horizontal spacing between nav items */
+}
+
+/* 
+  Pseudo-class selector - targets specific states of elements.
+  :hover applies when user hovers over the element.
+*/
+nav ul li a {
+  color: white;
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth animation for changes */
+}
+
+nav ul li a:hover {
+  background-color: rgba(255,255,255,0.2); /* Semi-transparent white */
+  transform: translateY(-2px); /* Moves element up slightly */
+}
+
+/* ===========================================
+   5. MAIN CONTENT SECTIONS
+   =========================================== */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 4rem; /* Space between sections */
+  padding: 2rem;
+  background: white;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* ===========================================
+   6. HERO SECTION STYLES
+   =========================================== */
+
+.hero {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button styles with hover effects */
+.cta-button {
+  background-color: #fff;
+  color: #f5576c;
+  padding: 1rem 2rem;
+  border: none; /* Removes default button border */
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* Stronger shadow */
+}
+
+/* ===========================================
+   7. GRID LAYOUTS
+   =========================================== */
+
+/* 
+  CSS Grid - modern layout system for two-dimensional layouts.
+  Great for creating responsive card layouts.
+*/
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* 
+    auto-fit: fits columns to available space
+    minmax(300px, 1fr): minimum 300px width, maximum 1 fraction of available space
+  */
+  gap: 2rem; /* Space between grid items */
+  margin-top: 2rem;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #667eea; /* Left border accent */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Hover lift effect */
+}
+
+.card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* 
+  Pseudo-element selector - creates virtual elements.
+  ::before and ::after can add content without HTML.
+*/
+.card ul li::before {
+  content: "✓"; /* Unicode checkmark character */
+  color: #28a745;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* ===========================================
+   8. FLEXBOX LAYOUTS
+   =========================================== */
+
+/* 
+  Flexbox - one-dimensional layout system.
+  Perfect for arranging items in rows or columns.
+*/
+.features {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to new lines */
+  gap: 2rem;
+  justify-content: center; /* Centers items horizontally */
+  margin-top: 2rem;
+}
+
+.feature-item {
+  flex: 1; /* Each item takes equal space */
+  min-width: 250px; /* Minimum width before wrapping */
+  max-width: 300px; /* Maximum width */
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-item img {
+  width: 100%; /* Responsive image width */
+  max-width: 150px;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+   9. FORM STYLES
+   =========================================== */
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block; /* Makes label take full width */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #34495e;
+}
+
+/* 
+  Attribute selector - targets elements with specific attributes.
+  This targets input elements with type="text" or type="email".
+*/
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit; /* Inherits font from parent */
+}
+
+/* Focus pseudo-class - when element is selected/active */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none; /* Removes default browser outline */
+  border-color: #667eea; /* Changes border color */
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); /* Custom focus ring */
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ===========================================
+   10. FOOTER STYLES
+   =========================================== */
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: white;
+  color: #2c3e50;
+}
+
+/* ===========================================
+   11. RESPONSIVE DESIGN
+   =========================================== */
+
+/* 
+  Media queries - apply styles based on screen size.
+  This makes the website responsive (mobile-friendly).
+*/
+
+/* Tablet styles (screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack navigation vertically */
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  
+  h1 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .features {
+    flex-direction: column; /* Stack feature items vertically */
+  }
+  
+  section {
+    padding: 1rem; /* Less padding on smaller screens */
+    margin-bottom: 2rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
+
+/* Mobile styles (screens smaller than 480px) */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .contact-form {
+    padding: 1rem;
+  }
+  
+  .social-links a {
+    display: block; /* Stack social links vertically */
+    margin: 0.5rem 0;
+  }
+}
+
+/* ===========================================
+   12. ANIMATIONS AND EFFECTS
+   =========================================== */
+
+/* 
+  CSS Animation - creates smooth motion effects.
+  @keyframes defines the animation steps.
+*/
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* Starts invisible */
+    transform: translateY(30px); /* Starts 30px lower */
+  }
+  to {
+    opacity: 1; /* Ends fully visible */
+    transform: translateY(0); /* Ends at normal position */
+  }
+}
+
+/* Apply animation to sections */
+section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* ===========================================
+   13. UTILITY CLASSES
+   =========================================== */
+
+/* 
+  Utility classes - reusable styles for common needs.
+  These can be applied to any element as needed.
+*/
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.margin-top {
+  margin-top: 2rem;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* ===========================================
+   KEY CSS CONCEPTS DEMONSTRATED:
+
+   1. SELECTORS:
+      - Element selectors (body, h1, p)
+      - Class selectors (.hero, .card)
+      - ID selectors (#home, #about)
+      - Descendant selectors (nav ul li)
+      - Pseudo-classes (:hover, :focus)
+      - Pseudo-elements (::before, ::after)
+      - Attribute selectors (input[type="text"])
+
+   2. BOX MODEL:
+      - Margin (outside spacing)
+      - Padding (inside spacing)
+      - Border (element outline)
+      - Content (actual content area)
+
+   3. LAYOUT SYSTEMS:
+      - Flexbox (display: flex)
+      - CSS Grid (display: grid)
+      - Positioning (relative, absolute, fixed)
+
+   4. RESPONSIVE DESIGN:
+      - Media queries (@media)
+      - Flexible units (rem, %, vw, vh)
+      - Mobile-first approach
+
+   5. VISUAL EFFECTS:
+      - Colors and gradients
+      - Shadows and borders
+      - Transitions and animations
+      - Transforms (rotate, scale, translate)
+
+   6. TYPOGRAPHY:
+      - Font families and sizes
+      - Line height and spacing
+      - Font weights and styles
+
+   7. BEST PRACTICES:
+      - CSS reset/normalize
+      - Consistent naming conventions
+      - Organized code structure
+      - Comments and documentation
+      - Performance optimization
+   =========================================== */
+
+/* ===========================================
+   JAVASCRIPT DEMO SECTION STYLES
+   =========================================== */
+
+/* JavaScript demo section styling */
+.javascript-demo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.javascript-demo h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.javascript-demo p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Demo container layout */
+.demo-container {
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Button styles for JavaScript demo */
+.demo-container button {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.demo-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.demo-container button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Input field styles */
+.demo-container input[type="text"],
+.demo-container input[type="number"] {
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 5px;
+}
+
+.demo-container input[type="text"]:focus,
+.demo-container input[type="number"]:focus {
+  border-color: #ff6b6b;
+  background: white;
+  transform: scale(1.02);
+}
+
+/* Select dropdown styles */
+.demo-container select {
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Greeting display */
+#greeting {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Calculator section */
+.calculator {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.calculator h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.calculator input,
+.calculator select {
+  margin: 5px;
+  width: auto;
+  min-width: 120px;
+}
+
+#result {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* JavaScript tips section */
+.js-tips {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.js-tips h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.js-tips ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.js-tips li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-left: 4px solid #feca57;
+  transition: all 0.3s ease;
+}
+
+.js-tips li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .javascript-demo {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .calculator input,
+  .calculator select {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  .demo-container {
+    gap: 1rem;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.demo-container > * {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Loading animation for buttons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+.demo-container button:active {
+  animation: pulse 0.6s;
+}

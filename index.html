@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- 
+  The DOCTYPE declaration tells the browser that this is an HTML5 document.
+  This should always be the first line in your HTML file.
+-->
+<html lang="en">
+<!-- 
+  The <html> element is the root element that contains all other elements.
+  The 'lang' attribute specifies the language of the document (English in this case).
+-->
+
+<head>
+  <!-- 
+    The <head> section contains metadata about the document.
+    This information is not displayed on the webpage but is used by browsers and search engines.
+  -->
+  
+  <!-- Character encoding - tells the browser how to interpret text -->
+  <meta charset="UTF-8">
+  
+  <!-- Viewport meta tag - makes the website responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page title that appears in the browser tab -->
+  <title>My First Website - HTML & CSS Tutorial</title>
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 
+    The <body> element contains all the visible content of the webpage.
+    Everything inside here will be displayed to users.
+  -->
+
+  <!-- HEADER SECTION -->
+  <header>
+    <!-- 
+      The <header> element represents introductory content.
+      It typically contains navigation, logos, or main headings.
+    -->
+    <nav>
+      <!-- 
+        The <nav> element is used for navigation links.
+        It helps screen readers and search engines understand the site structure.
+      -->
+      <ul>
+        <!-- 
+          <ul> creates an unordered (bulleted) list.
+          Each <li> represents a list item.
+        -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Main heading of the page -->
+    <h1>Welcome to My First Website</h1>
+    <!-- 
+      <h1> is the most important heading. Use only one per page.
+      Headings go from <h1> (most important) to <h6> (least important).
+    -->
+  </header>
+
+  <!-- MAIN CONTENT SECTION -->
+  <main>
+    <!-- 
+      The <main> element contains the primary content of the page.
+      There should only be one <main> element per page.
+    -->
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <!-- 
+        <section> elements group related content together.
+        The 'id' attribute creates a unique identifier for this section.
+        The 'class' attribute allows us to apply CSS styles.
+      -->
+      <h2>Learning HTML & CSS</h2>
+      <!-- <h2> is a subheading, less important than <h1> -->
+      
+      <p>
+        <!-- <p> elements contain paragraphs of text -->
+        This is a beginner-friendly introduction to <strong>HTML</strong> and <strong>CSS</strong>.
+        <!-- <strong> makes text bold and indicates importance -->
+        HTML structures the content, while CSS makes it look beautiful!
+      </p>
+      
+      <!-- Button element -->
+      <button class="cta-button">Get Started</button>
+      <!-- 
+        <button> creates a clickable button.
+        We'll style this with CSS using the 'cta-button' class.
+      -->
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About HTML & CSS</h2>
+      
+      <div class="content-grid">
+        <!-- 
+          <div> is a generic container element.
+          It's used to group content for styling purposes.
+        -->
+        
+        <div class="card">
+          <h3>HTML (HyperText Markup Language)</h3>
+          <!-- <h3> is a smaller heading for subsections -->
+          
+          <p>
+            HTML is the <em>skeleton</em> of web pages. It defines the structure and content.
+            <!-- <em> emphasizes text (usually displayed in italics) -->
+          </p>
+          
+          <ul>
+            <!-- Another unordered list with key HTML concepts -->
+            <li>Elements and Tags</li>
+            <li>Attributes</li>
+            <li>Semantic Structure</li>
+            <li>Forms and Input</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>CSS (Cascading Style Sheets)</h3>
+          
+          <p>
+            CSS is the <em>clothing</em> of web pages. It controls how HTML elements look and are positioned.
+          </p>
+          
+          <ul>
+            <li>Colors and Typography</li>
+            <li>Layout and Positioning</li>
+            <li>Responsive Design</li>
+            <li>Animations and Effects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services/Features Section -->
+    <section id="services" class="services">
+      <h2>What You'll Learn</h2>
+      
+      <div class="features">
+        <div class="feature-item">
+          <!-- Image element -->
+          <img src="https://via.placeholder.com/150/4CAF50/FFFFFF?text=HTML" alt="HTML Logo">
+          <!-- 
+            <img> displays images. Key attributes:
+            - src: path to the image file
+            - alt: alternative text for accessibility and SEO
+          -->
+          
+          <h4>HTML Basics</h4>
+          <p>Learn to structure web content with semantic HTML elements.</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://via.placeholder.com/150/2196F3/FFFFFF?text=CSS" alt="CSS Logo">
+          <h4>CSS Styling</h4>
+          <p>Make your websites beautiful with colors, fonts, and layouts.</p>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://via.placeholder.com/150/FF9800/FFFFFF?text=RWD" alt="Responsive Design">
+          <h4>Responsive Design</h4>
+          <p>Create websites that work perfectly on all devices.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      
+      <form class="contact-form">
+        <!-- 
+          <form> elements create interactive forms for user input.
+          Forms can collect data and send it to a server.
+        -->
+        
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <!-- 
+            <label> provides a caption for form elements.
+            The 'for' attribute connects it to an input element's 'id'.
+          -->
+          
+          <input type="text" id="name" name="name" required>
+          <!-- 
+            <input> creates form input fields. Key attributes:
+            - type: specifies the input type (text, email, password, etc.)
+            - id: unique identifier
+            - name: used when submitting form data
+            - required: makes the field mandatory
+          -->
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
+          <!-- type="email" provides email validation -->
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <!-- 
+            <textarea> creates a multi-line text input.
+            The 'rows' attribute sets the visible height.
+          -->
+        </div>
+
+        <button type="submit" class="submit-button">Send Message</button>
+        <!-- type="submit" makes this button submit the form -->
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer>
+    <!-- 
+      The <footer> element represents the bottom section of a page.
+      It typically contains copyright info, links, or contact details.
+    -->
+    <p>&copy; 2025 My First Website. Built with HTML & CSS.</p>
+    <!-- &copy; is an HTML entity that displays the copyright symbol © -->
+    
+    <div class="social-links">
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <!-- 
+        target="_blank" opens links in a new tab/window.
+        # is used as a placeholder for actual URLs.
+      -->
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<!-- 
+  KEY HTML CONCEPTS DEMONSTRATED:
+
+  1. DOCUMENT STRUCTURE:
+     - DOCTYPE declaration
+     - html, head, and body elements
+     - Proper nesting and indentation
+
+  2. SEMANTIC ELEMENTS:
+     - header, nav, main, section, footer
+     - These give meaning to content structure
+
+  3. TEXT ELEMENTS:
+     - Headings (h1-h6)
+     - Paragraphs (p)
+     - Emphasis (strong, em)
+
+  4. LISTS:
+     - Unordered lists (ul) with list items (li)
+
+  5. LINKS AND NAVIGATION:
+     - Anchor tags (a) with href attributes
+     - Internal linking with # and id attributes
+
+  6. IMAGES:
+     - img elements with src and alt attributes
+
+  7. FORMS:
+     - form, input, textarea, button elements
+     - Labels and form validation
+
+  8. ATTRIBUTES:
+     - id for unique identification
+     - class for styling hooks
+     - Various specific attributes (src, href, type, etc.)
+
+  9. ACCESSIBILITY:
+     - Alt text for images
+     - Labels for form inputs
+     - Semantic HTML structure
+-->
+
+  <!-- JavaScript Tutorial Section -->
+  <section class="javascript-demo">
+    <h2>JavaScript Interactive Demo</h2>
+    <p>Open the browser's developer console (F12) to see JavaScript output and interact with these elements!</p>
+    
+    <!-- Interactive Elements -->
+    <div class="demo-container">
+      <button id="greetButton">Click Me to Greet!</button>
+      <p id="greeting"></p>
+      
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <button id="personalGreetButton">Personal Greeting</button>
+      
+      <div class="calculator">
+        <h3>Simple Calculator</h3>
+        <input type="number" id="num1" placeholder="First number">
+        <select id="operation">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">×</option>
+          <option value="divide">÷</option>
+        </select>
+        <input type="number" id="num2" placeholder="Second number">
+        <button id="calculateButton">=</button>
+        <p id="result"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+  <script src="interactive.js"></script>
