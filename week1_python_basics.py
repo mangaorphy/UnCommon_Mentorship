@@ -94,8 +94,8 @@ print(f"Type of BMI: {type(bmi)}")
 is_adult = age >= 18
 is_teenager = 13 <= age <= 19
 
-print(f"Boolean example: Is adult? {is_adult}")
-print(f"Type of is_adult: {type(is_adult)}")
+print(f"Boolean example: Is adult? {is_adult}") # True
+print(f"Type of is_adult: {type(is_adult)}") # <class 'bool'>
 
 # ==============================================
 # 4. OPERATORS - PERFORMING OPERATIONS
